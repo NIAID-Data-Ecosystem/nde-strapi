@@ -1,0 +1,30 @@
+{
+  "name": "nde-strapi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/strapi": "4.11.7",
+    "@strapi/plugin-users-permissions": "4.11.7",
+    "@strapi/plugin-i18n": "4.11.7",
+    "better-sqlite3": "8.0.1"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "b8ff53d6-8a5e-44c5-903e-36d1b926a175"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
