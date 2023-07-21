@@ -23,7 +23,7 @@
       "target": "api::doc.doc",
       "inversedBy": "categories"
     },
-    "news_reports": {
+    "news": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::news-report.news-report",

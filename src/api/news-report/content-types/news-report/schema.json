@@ -4,7 +4,7 @@
   "info": {
     "singularName": "news-report",
     "pluralName": "news-reports",
-    "displayName": "News-report",
+    "displayName": "News",
     "description": ""
   },
   "options": {
@@ -25,7 +25,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::category.category",
-      "mappedBy": "news_reports"
+      "mappedBy": "news"
     }
   }
 }
