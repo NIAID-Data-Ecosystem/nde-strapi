@@ -22,6 +22,12 @@
       "relation": "manyToMany",
       "target": "api::doc.doc",
       "inversedBy": "categories"
+    },
+    "news_reports": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::news-report.news-report",
+      "inversedBy": "categories"
     }
   }
 }
