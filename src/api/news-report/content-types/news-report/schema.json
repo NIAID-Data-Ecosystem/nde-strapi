@@ -41,6 +41,11 @@
     },
     "shortDescription": {
       "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
     }
   }
 }
