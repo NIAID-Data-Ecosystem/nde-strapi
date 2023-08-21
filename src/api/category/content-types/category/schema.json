@@ -17,12 +17,6 @@
       "required": true,
       "unique": true
     },
-    "docs": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::doc.doc",
-      "inversedBy": "categories"
-    },
     "news": {
       "type": "relation",
       "relation": "manyToMany",
@@ -34,6 +28,15 @@
       "relation": "manyToMany",
       "target": "api::event.event",
       "inversedBy": "categories"
+    },
+    "docs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::doc.doc",
+      "mappedBy": "category"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }

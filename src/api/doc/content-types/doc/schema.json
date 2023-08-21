@@ -18,14 +18,21 @@
     "description": {
       "type": "richtext"
     },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "mappedBy": "docs"
-    },
     "subtitle": {
       "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "docs"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }
