@@ -40,7 +40,9 @@
       ]
     },
     "shortDescription": {
-      "type": "text"
+      "type": "text",
+      "required": true,
+      "maxLength": 144
     },
     "slug": {
       "type": "uid",

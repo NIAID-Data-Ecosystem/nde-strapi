@@ -4,7 +4,8 @@
   "info": {
     "singularName": "event",
     "pluralName": "events",
-    "displayName": "Event"
+    "displayName": "Event",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +16,8 @@
       "type": "date"
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "subtitle": {
       "type": "string"
@@ -28,6 +30,10 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "mappedBy": "events"
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
     }
   }
 }
