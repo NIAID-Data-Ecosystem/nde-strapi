@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_integration_page_tabs",
+  "info": {
+    "displayName": "Tabs"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "regex": "^[a-zA-Z0-9-_]+$"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "panels": {
+      "type": "component",
+      "repeatable": true,
+      "component": "integration-page.tab-panels"
+    }
+  }
+}

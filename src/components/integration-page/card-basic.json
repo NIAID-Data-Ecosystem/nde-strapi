@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_integration_page_card_basics",
+  "info": {
+    "displayName": "CardBasic",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "additionalInfo": {
+      "type": "richtext"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "tabItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "integration-page.tab-item"
+    },
+    "isRequired": {
+      "type": "boolean"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

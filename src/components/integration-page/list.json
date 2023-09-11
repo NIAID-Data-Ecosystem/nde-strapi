@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_integration_page_lists",
+  "info": {
+    "displayName": "List",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "integration-page.list-item"
+    }
+  }
+}

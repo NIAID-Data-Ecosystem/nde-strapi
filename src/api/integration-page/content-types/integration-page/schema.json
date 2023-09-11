@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "integration_pages",
+  "info": {
+    "singularName": "integration-page",
+    "pluralName": "integration-pages",
+    "displayName": "Integration Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "overview": {
+      "type": "component",
+      "repeatable": true,
+      "component": "integration-page.section-with-list"
+    },
+    "tabs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "integration-page.tabs"
+    }
+  }
+}

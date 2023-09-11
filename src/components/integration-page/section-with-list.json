@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_integration_page_section_with_lists",
+  "info": {
+    "displayName": "SectionWithList",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "regex": "^[a-zA-Z0-9-_]+$"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_integration_page_list_items",
+  "info": {
+    "displayName": "listItem",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "isRequired": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

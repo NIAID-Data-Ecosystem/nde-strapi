@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_integration_page_tab_panels",
+  "info": {
+    "displayName": "TabPanels",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "integration-page.card-basic"
+    }
+  }
+}
