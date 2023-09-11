@@ -14,7 +14,7 @@
     "slug": {
       "type": "string",
       "regex": "^[a-zA-Z0-9-_]+$",
-      "required": true
+      "required": false
     },
     "description": {
       "type": "richtext"

@@ -27,6 +27,11 @@
       "type": "component",
       "repeatable": false,
       "component": "integration-page.tabs"
+    },
+    "textBlocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "integration-page.section-basic"
     }
   }
 }
