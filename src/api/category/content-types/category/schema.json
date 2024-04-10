@@ -37,6 +37,12 @@
     },
     "order": {
       "type": "integer"
+    },
+    "feature": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feature.feature",
+      "mappedBy": "categories"
     }
   }
 }
