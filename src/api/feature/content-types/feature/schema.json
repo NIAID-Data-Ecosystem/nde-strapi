@@ -38,21 +38,14 @@
     "thumbnail": {
       "type": "media",
       "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "required": true,
+      "allowedTypes": ["images"]
     },
     "banner": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     }
   }
 }
