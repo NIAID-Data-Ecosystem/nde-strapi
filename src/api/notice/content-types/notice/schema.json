@@ -18,7 +18,12 @@
     },
     "status": {
       "type": "enumeration",
-      "enum": ["INFO", "ERROR", "WARNING", "SUCCESS"],
+      "enum": [
+        "INFO",
+        "ERROR",
+        "WARNING",
+        "SUCCESS"
+      ],
       "required": true,
       "default": "WARNING"
     },
@@ -29,6 +34,10 @@
       "type": "boolean",
       "required": true,
       "default": true
+    },
+    "heading": {
+      "type": "string",
+      "required": true
     }
   }
 }
