@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "disclaimer_pages",
+  "info": {
+    "singularName": "disclaimer-page",
+    "pluralName": "disclaimer-pages",
+    "displayName": "Disclaimer page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
