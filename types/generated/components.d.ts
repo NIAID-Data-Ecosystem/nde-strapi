@@ -1,22 +1,22 @@
-import type { Attribute, Schema } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface IntegrationPageCardBasic extends Schema.Component {
+export interface IntegrationPageCardBasic extends Struct.ComponentSchema {
   collectionName: 'components_integration_page_card_basics';
   info: {
     description: '';
     displayName: 'CardBasic';
   };
   attributes: {
-    additionalInfo: Attribute.RichText;
-    content: Attribute.RichText & Attribute.Required;
-    icon: Attribute.Media<'images'>;
-    isRequired: Attribute.Boolean;
-    tabItems: Attribute.Component<'integration-page.tab-item', true>;
-    title: Attribute.String & Attribute.Required;
+    additionalInfo: Schema.Attribute.RichText;
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images'>;
+    isRequired: Schema.Attribute.Boolean;
+    tabItems: Schema.Attribute.Component<'integration-page.tab-item', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface IntegrationPageList extends Schema.Component {
+export interface IntegrationPageList extends Struct.ComponentSchema {
   collectionName: 'components_integration_page_lists';
   info: {
     description: '';
@@ -24,13 +24,13 @@ export interface IntegrationPageList extends Schema.Component {
     icon: 'bulletList';
   };
   attributes: {
-    description: Attribute.RichText;
-    items: Attribute.Component<'integration-page.list-item', true>;
-    name: Attribute.String;
+    description: Schema.Attribute.RichText;
+    items: Schema.Attribute.Component<'integration-page.list-item', true>;
+    name: Schema.Attribute.String;
   };
 }
 
-export interface IntegrationPageListItem extends Schema.Component {
+export interface IntegrationPageListItem extends Struct.ComponentSchema {
   collectionName: 'components_integration_page_list_items';
   info: {
     description: '';
@@ -38,12 +38,12 @@ export interface IntegrationPageListItem extends Schema.Component {
     icon: 'bulletList';
   };
   attributes: {
-    description: Attribute.RichText;
-    isRequired: Attribute.Boolean;
+    description: Schema.Attribute.RichText;
+    isRequired: Schema.Attribute.Boolean;
   };
 }
 
-export interface IntegrationPageSectionBasic extends Schema.Component {
+export interface IntegrationPageSectionBasic extends Struct.ComponentSchema {
   collectionName: 'components_integration_page_section_basics';
   info: {
     description: '';
@@ -51,13 +51,13 @@ export interface IntegrationPageSectionBasic extends Schema.Component {
     icon: 'apps';
   };
   attributes: {
-    description: Attribute.RichText;
-    slug: Attribute.String;
-    title: Attribute.String & Attribute.Required;
+    description: Schema.Attribute.RichText;
+    slug: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface IntegrationPageSectionWithList extends Schema.Component {
+export interface IntegrationPageSectionWithList extends Struct.ComponentSchema {
   collectionName: 'components_integration_page_section_with_lists';
   info: {
     description: '';
@@ -65,54 +65,54 @@ export interface IntegrationPageSectionWithList extends Schema.Component {
     icon: '';
   };
   attributes: {
-    description: Attribute.RichText;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    slug: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    description: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface IntegrationPageTabItem extends Schema.Component {
+export interface IntegrationPageTabItem extends Struct.ComponentSchema {
   collectionName: 'components_integration_page_tab_items';
   info: {
     description: '';
     displayName: 'tabItem';
   };
   attributes: {
-    content: Attribute.RichText & Attribute.Required;
-    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    name: Attribute.String & Attribute.Required;
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface IntegrationPageTabPanels extends Schema.Component {
+export interface IntegrationPageTabPanels extends Struct.ComponentSchema {
   collectionName: 'components_integration_page_tab_panels';
   info: {
     description: '';
     displayName: 'TabPanels';
   };
   attributes: {
-    cards: Attribute.Component<'integration-page.card-basic', true>;
-    title: Attribute.String & Attribute.Required;
+    cards: Schema.Attribute.Component<'integration-page.card-basic', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface IntegrationPageTabs extends Schema.Component {
+export interface IntegrationPageTabs extends Struct.ComponentSchema {
   collectionName: 'components_integration_page_tabs';
   info: {
     displayName: 'Tabs';
   };
   attributes: {
-    description: Attribute.RichText;
-    panels: Attribute.Component<'integration-page.tab-panels', true>;
-    slug: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    description: Schema.Attribute.RichText;
+    panels: Schema.Attribute.Component<'integration-page.tab-panels', true>;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'integration-page.card-basic': IntegrationPageCardBasic;
       'integration-page.list': IntegrationPageList;
       'integration-page.list-item': IntegrationPageListItem;
