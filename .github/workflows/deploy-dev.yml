@@ -19,13 +19,13 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: $AWS_ROLE
-          aws-region: $AWS_REGION
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Run SSM Command
         run: |
           aws ssm send-command \
-            --instance-ids "$AWS_EC2_DEV_INSTANCE_ID" \
+            --instance-ids "${{ secrets.AWS_EC2_DEV_INSTANCE_ID }}" \
             --document-name "AWS-RunShellScript" \
-            --parameters commands='["$AWS_DEPLOY_CMD"]'
+            --parameters commands='["${{ secrets.AWS_DEPLOY_CMD }}"]'
 
