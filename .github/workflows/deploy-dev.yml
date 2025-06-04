@@ -1,4 +1,4 @@
-ame: Deploy-to-Strapi-Dev
+name: Deploy-to-Strapi-Dev
 
 on:
   workflow_dispatch:
