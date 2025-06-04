@@ -23,12 +23,12 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Run SSM Command and Stream Output
-        uses: aws-actions/aws-ssm-run-command@v1.4.1 # Use this action
+        uses: aws-actions/aws-ssm-run-command@v1
         with:
           instance-ids: ${{ secrets.AWS_EC2_DEV_INSTANCE_ID }}
           document-name: AWS-RunShellScript
           comment: 'Deploying Strapi via GitHub Actions'
           parameters: |
             commands:
-              - ${{ secrets.AWS_DEPLOY_CMD }} # Your deploy.sh script content
+              - ${{ secrets.AWS_DEPLOY_CMD }}
 
