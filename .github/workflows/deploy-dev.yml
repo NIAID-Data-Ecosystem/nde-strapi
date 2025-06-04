@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - dev
+      - auto-deploy-dev
 
 jobs:
   run-with-ssm:
