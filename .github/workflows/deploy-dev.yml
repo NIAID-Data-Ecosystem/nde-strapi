@@ -1,0 +1,30 @@
+name: Deploy-to-Strapi-Dev
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+
+jobs:
+  run-with-ssm:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: $AWS_ROLE
+          aws-region: $AWS_REGION
+
+      - name: Run SSM Command
+        run: |
+          aws ssm send-command \
+            --instance-ids "$AWS_EC2_DEV_INSTANCE_ID" \
+            --document-name "AWS-RunShellScript" \
+            --parameters commands='["$AWS_DEPLOY_CMD"]'
+
