@@ -474,6 +474,43 @@ export interface ApiDisclaimerPageDisclaimerPage
   };
 }
 
+export interface ApiDiseaseDisease extends Struct.CollectionTypeSchema {
+  collectionName: 'diseases';
+  info: {
+    displayName: 'Disease';
+    pluralName: 'diseases';
+    singularName: 'disease';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contacts: Schema.Attribute.Component<'shared.link-item', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    externalLinks: Schema.Attribute.Component<'shared.link-item', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::disease.disease'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    query: Schema.Attribute.JSON & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    topic: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDocDoc extends Struct.CollectionTypeSchema {
   collectionName: 'docs';
   info: {
@@ -620,6 +657,37 @@ export interface ApiIntegrationPageIntegrationPage
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLinkCategoryLinkCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'link_categories';
+  info: {
+    displayName: 'link-category';
+    pluralName: 'link-categories';
+    singularName: 'link-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::link-category.link-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -1247,10 +1315,12 @@ declare module '@strapi/strapi' {
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::category.category': ApiCategoryCategory;
       'api::disclaimer-page.disclaimer-page': ApiDisclaimerPageDisclaimerPage;
+      'api::disease.disease': ApiDiseaseDisease;
       'api::doc.doc': ApiDocDoc;
       'api::event.event': ApiEventEvent;
       'api::feature.feature': ApiFeatureFeature;
       'api::integration-page.integration-page': ApiIntegrationPageIntegrationPage;
+      'api::link-category.link-category': ApiLinkCategoryLinkCategory;
       'api::news-report.news-report': ApiNewsReportNewsReport;
       'api::notice.notice': ApiNoticeNotice;
       'api::status.status': ApiStatusStatus;

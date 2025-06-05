@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_shared_link_items",
+  "info": {
+    "displayName": "Link Item",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "isExternal": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::link-category.link-category"
+    }
+  },
+  "config": {}
+}

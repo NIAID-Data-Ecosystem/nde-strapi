@@ -110,6 +110,26 @@ export interface IntegrationPageTabs extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedLinkItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_link_items';
+  info: {
+    displayName: 'Link Item';
+    icon: 'link';
+  };
+  attributes: {
+    isExternal: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    link_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::link-category.link-category'
+    >;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -121,6 +141,7 @@ declare module '@strapi/strapi' {
       'integration-page.tab-item': IntegrationPageTabItem;
       'integration-page.tab-panels': IntegrationPageTabPanels;
       'integration-page.tabs': IntegrationPageTabs;
+      'shared.link-item': SharedLinkItem;
     }
   }
 }
