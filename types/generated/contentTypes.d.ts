@@ -764,7 +764,7 @@ export interface ApiNoticeNotice extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    status: Schema.Attribute.Enumeration<
+    state: Schema.Attribute.Enumeration<
       ['INFO', 'ERROR', 'WARNING', 'SUCCESS']
     > &
       Schema.Attribute.Required &
