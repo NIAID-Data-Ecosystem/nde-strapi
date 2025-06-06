@@ -534,7 +534,7 @@ export interface ApiDocDoc extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String & Schema.Attribute.Required;
     order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'name'>;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
