@@ -117,15 +117,15 @@ export interface SharedLinkItem extends Struct.ComponentSchema {
     icon: 'link';
   };
   attributes: {
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::link-category.link-category'
+    >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     isExternal: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
-    link_categories: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::link-category.link-category'
-    >;
-    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

@@ -19,7 +19,7 @@
       "required": true,
       "default": true
     },
-    "logo": {
+    "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -29,7 +29,7 @@
         "audios"
       ]
     },
-    "link_categories": {
+    "categories": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::link-category.link-category"
