@@ -16,16 +16,16 @@
       "type": "richtext",
       "required": true
     },
-    "status": {
+    "state": {
       "type": "enumeration",
+      "required": true,
+      "default": "WARNING",
       "enum": [
         "INFO",
         "ERROR",
         "WARNING",
         "SUCCESS"
-      ],
-      "required": true,
-      "default": "WARNING"
+      ]
     },
     "affectedRepository": {
       "type": "string"
