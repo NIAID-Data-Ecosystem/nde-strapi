@@ -1,0 +1,28 @@
+name: Deploy-to-Strapi-Prod
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-with-ssm:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Run SSM Command
+        run: |
+          aws ssm send-command \
+            --instance-ids "${{ secrets.AWS_EC2_PROD_INSTANCE_ID }}" \
+            --document-name "AWS-RunShellScript" \
+            --parameters commands='["${{ secrets.AWS_DEPLOY_CMD }}"]'
