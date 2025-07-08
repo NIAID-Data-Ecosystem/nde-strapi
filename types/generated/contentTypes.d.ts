@@ -572,6 +572,7 @@ export interface ApiFeatureFeature extends Struct.CollectionTypeSchema {
       'api::feature.feature'
     > &
       Schema.Attribute.Private;
+    metaFields: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;

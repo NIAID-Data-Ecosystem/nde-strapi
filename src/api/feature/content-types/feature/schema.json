@@ -39,13 +39,22 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "banner": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "metaFields": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }
