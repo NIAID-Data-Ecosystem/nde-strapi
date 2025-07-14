@@ -557,6 +557,11 @@ export interface ApiFeatureFeature extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    abstract: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 144;
+      }>;
     banner: Schema.Attribute.Media<'images'>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
