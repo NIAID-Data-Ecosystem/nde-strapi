@@ -560,7 +560,7 @@ export interface ApiFeatureFeature extends Struct.CollectionTypeSchema {
     abstract: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 144;
+        maxLength: 160;
       }>;
     banner: Schema.Attribute.Media<'images'>;
     categories: Schema.Attribute.Relation<

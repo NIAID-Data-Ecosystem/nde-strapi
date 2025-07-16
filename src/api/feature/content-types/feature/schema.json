@@ -27,7 +27,7 @@
     },
     "abstract": {
       "type": "text",
-      "maxLength": 144,
+      "maxLength": 160,
       "required": true
     },
     "content": {
