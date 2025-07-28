@@ -55,6 +55,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "metaFields": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

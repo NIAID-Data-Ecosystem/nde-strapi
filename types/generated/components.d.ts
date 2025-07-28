@@ -130,6 +130,21 @@ export interface SharedLinkItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    displayName: 'SEO';
+  };
+  attributes: {
+    description: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 155;
+      }>;
+    keywords: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -142,6 +157,7 @@ declare module '@strapi/strapi' {
       'integration-page.tab-panels': IntegrationPageTabPanels;
       'integration-page.tabs': IntegrationPageTabs;
       'shared.link-item': SharedLinkItem;
+      'shared.seo': SharedSeo;
     }
   }
 }
