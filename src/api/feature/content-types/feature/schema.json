@@ -25,15 +25,14 @@
       "targetField": "title",
       "required": true
     },
+    "abstract": {
+      "type": "text",
+      "maxLength": 160,
+      "required": true
+    },
     "content": {
       "type": "richtext",
       "required": true
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "inversedBy": "feature"
     },
     "thumbnail": {
       "type": "media",
@@ -42,6 +41,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "feature"
     },
     "banner": {
       "type": "media",

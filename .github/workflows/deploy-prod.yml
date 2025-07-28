@@ -24,5 +24,4 @@ jobs:
         run: |
           aws ssm send-command \
             --instance-ids "${{ secrets.AWS_EC2_PROD_INSTANCE_ID }}" \
-            --document-name "AWS-RunShellScript" \
-            --parameters commands='["${{ secrets.AWS_DEPLOY_CMD }}"]'
+            --document-name "StrapiAPI_RunDeployScriptDocument" \
