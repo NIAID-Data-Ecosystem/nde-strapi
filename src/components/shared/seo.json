@@ -5,14 +5,14 @@
   },
   "options": {},
   "attributes": {
-    "metaTitle": {
+    "title": {
       "type": "string"
     },
-    "metaDescription": {
+    "description": {
       "type": "string",
       "maxLength": 155
     },
-    "metaKeywords": {
+    "keywords": {
       "type": "string"
     }
   },

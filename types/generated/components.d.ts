@@ -136,12 +136,12 @@ export interface SharedSeo extends Struct.ComponentSchema {
     displayName: 'SEO';
   };
   attributes: {
-    metaDescription: Schema.Attribute.String &
+    description: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 155;
       }>;
-    metaKeywords: Schema.Attribute.String;
-    metaTitle: Schema.Attribute.String;
+    keywords: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
