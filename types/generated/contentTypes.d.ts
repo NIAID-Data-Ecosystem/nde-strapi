@@ -474,6 +474,45 @@ export interface ApiDisclaimerPageDisclaimerPage
   };
 }
 
+export interface ApiDiseaseDisease extends Struct.CollectionTypeSchema {
+  collectionName: 'diseases';
+  info: {
+    displayName: 'Disease';
+    pluralName: 'diseases';
+    singularName: 'disease';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contacts: Schema.Attribute.Component<'shared.link-item', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    externalLinks: Schema.Attribute.Component<'shared.link-item', true>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::disease.disease'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    query: Schema.Attribute.JSON & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    topic: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDocDoc extends Struct.CollectionTypeSchema {
   collectionName: 'docs';
   info: {
@@ -577,6 +616,7 @@ export interface ApiFeatureFeature extends Struct.CollectionTypeSchema {
       'api::feature.feature'
     > &
       Schema.Attribute.Private;
+    metaFields: Schema.Attribute.Component<'shared.seo', false>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1283,6 +1323,7 @@ declare module '@strapi/strapi' {
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::category.category': ApiCategoryCategory;
       'api::disclaimer-page.disclaimer-page': ApiDisclaimerPageDisclaimerPage;
+      'api::disease.disease': ApiDiseaseDisease;
       'api::doc.doc': ApiDocDoc;
       'api::event.event': ApiEventEvent;
       'api::feature.feature': ApiFeatureFeature;
