@@ -779,34 +779,6 @@ export interface ApiNoticeNotice extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiStatusStatus extends Struct.SingleTypeSchema {
-  collectionName: 'statuses';
-  info: {
-    displayName: 'status';
-    pluralName: 'statuses';
-    singularName: 'status';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::status.status'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    success: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1327,7 +1299,6 @@ declare module '@strapi/strapi' {
       'api::link-category.link-category': ApiLinkCategoryLinkCategory;
       'api::news-report.news-report': ApiNewsReportNewsReport;
       'api::notice.notice': ApiNoticeNotice;
-      'api::status.status': ApiStatusStatus;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
