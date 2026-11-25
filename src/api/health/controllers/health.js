@@ -5,20 +5,11 @@ module.exports = {
     try {
       // Basic database ping
       await strapi.db.connection.raw('SELECT 1');
-
-      ctx.send({
-        status: 'ok',
-        uptime: process.uptime(),
-        timestamp: Date.now(),
-        env: process.env.NODE_ENV,
-      });
+      ctx.send({ status: 'ok' });
     } catch (error) {
+      strapi.log.error(`Health check failed: ${error.message}`);
       ctx.status = 503;
-      ctx.send({
-        status: 'error',
-        message: 'Database unavailable',
-        error: error.message,
-      });
+      ctx.send({ status: 'error' });
     }
   },
 };
